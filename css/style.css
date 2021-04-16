@@ -34,7 +34,7 @@ body{
     height: auto;
 }
 /* 로그인 폼*/
-.login-form :focus{
+:focus{
     outline: 0;
 }
 .login-form fieldset{
@@ -74,8 +74,9 @@ body{
     order: 1;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 10px;
-    background-color: pink;
+    background-color:;
 }
 
 [name="userEmail"],
@@ -94,8 +95,54 @@ body{
     font-size: 16px;
     border: 0;
     width: 100%;
-    padding: 16px 0
-    ;
+    padding: 16px 0;
+}
+.login-state{
+    position: relative;
+    background:  ;
+}
+.login-state label{
+    display: flex;
+    align-items: center;
+}
+.login-state .icon-check{
+    width: 24px;
+    height: 24px;
+    background-image: url(./../images/icon-unchecked.svg);
+    background-size: cover;
+    margin-right: 5px;
+}
+[name="state"]{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    background-color: transparent;
+    opacity: 0;
 
 }
-
+[name="state"]:focus{
+    box-shadow: 0 0 0 4px ;
+    border-radius: 2px;
+}
+[name="state"]:checked + label .icon-check{
+    background-image: url(./../images/icon-checked.svg);
+}
+.login-ip label::after{
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    text-align: right;
+    content: "OFF";
+    color: #aaaaaa;
+}
+[name="ip"]:checked + label::after{
+    content: "ON";
+    color: #03cf5d;
+}
+[name="ip"]{
+    display: none;
+}
